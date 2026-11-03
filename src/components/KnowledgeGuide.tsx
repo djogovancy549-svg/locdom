@@ -219,6 +219,20 @@ export const KnowledgeGuide: React.FC = () => {
               Cloudflare Pages akan memberikan subdomain instan gratis (contoh: <code>https://nama-bisnis.pages.dev</code>) atau Anda bisa menghubungkan domain kustom sendiri (contoh: <code>https://link.perusahaan.com</code>).
             </p>
           </div>
+
+          {/* Cloudflare Troubleshooting: Initializing stuck */}
+          <div className="p-3 bg-amber-950/30 border border-amber-800/50 rounded-lg space-y-1.5 mt-2">
+            <span className="font-semibold text-amber-300 flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-amber-400" />
+              Solusi Jika Build Tertahan di "Initializing build environment..." (3+ Menit)
+            </span>
+            <p className="text-slate-300 text-[11px] leading-relaxed">
+              Jika di Cloudflare muncul status <em>Build #... Initializing build environment</em> yang tidak jalan-jalan, itu karena Anda berada di menu <strong>Cloudflare Workers</strong> (yang menggunakan antrean container serverless lambat).
+            </p>
+            <p className="text-slate-300 text-[11px] leading-relaxed">
+              <strong>Solusinya:</strong> Klik tombol <strong>Cancel build</strong> di kanan atas, lalu buat lewat tab <strong>Pages</strong> (Workers &amp; Pages &gt; Create &gt; tab <strong>Pages</strong> &gt; Connect to Git). Cloudflare Pages khusus didesain untuk frontend Vite/React dan akan selesai hanya dalam 20–30 detik!
+            </p>
+          </div>
         </div>
       </div>
     </div>
